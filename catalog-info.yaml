@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gkereggff-nodejs-gitops
+  description: This is GitOps manifest for gkereggff-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gkereggff-nodejs
+    backstage.io/kubernetes-id: gkereggff-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gkereggff-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gkereggff-nodejs
